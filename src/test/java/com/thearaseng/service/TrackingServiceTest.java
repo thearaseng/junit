@@ -14,4 +14,13 @@ public class TrackingServiceTest {
 
     }
 
+    @Test
+    public void addingProteinThenTotalIncreaseByThatAmount() {
+
+        TrackingService trackingService = new TrackingService();
+        trackingService.addProtein(10);
+        assertEquals("Total should be increased by 10", 10, trackingService.getTotal());
+
+    }
+
 }
