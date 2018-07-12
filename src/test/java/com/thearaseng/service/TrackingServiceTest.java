@@ -1,6 +1,8 @@
 package com.thearaseng.service;
 
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -8,6 +10,16 @@ import static org.junit.Assert.assertEquals;
 public class TrackingServiceTest {
 
     private TrackingService trackingService;
+
+    @BeforeClass
+    public void beforeClass() {
+        System.out.println("Before Class");
+    }
+
+    @AfterClass
+    public void afterClass() {
+        System.out.println("After Class");
+    }
 
     @Before
     public void setUp() {
