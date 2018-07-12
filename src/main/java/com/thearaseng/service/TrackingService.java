@@ -1,5 +1,6 @@
 package com.thearaseng.service;
 
+import com.thearaseng.exception.InvalidGoalException;
 import com.thearaseng.model.HistoryItem;
 
 import java.util.ArrayList;
@@ -31,7 +32,9 @@ public class TrackingService {
 		return total;
 	}
 
-	public void setGoal(int value) {
+	public void setGoal(int value) throws InvalidGoalException {
+		if (value < 0)
+			throw new InvalidGoalException();
 		goal = value;
 	}
 
