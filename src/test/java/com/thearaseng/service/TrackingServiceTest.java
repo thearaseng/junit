@@ -1,13 +1,16 @@
 package com.thearaseng.service;
 
 import com.thearaseng.exception.InvalidGoalException;
+import com.thearaseng.service.category.GoodTestCategory;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import static org.junit.Assert.assertEquals;
 
+@Category(GoodTestCategory.class)
 public class TrackingServiceTest {
 
     private TrackingService trackingService;
