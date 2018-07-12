@@ -1,15 +1,22 @@
 package com.thearaseng.service;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class TrackingServiceTest {
 
+    TrackingService trackingService;
+
+    @Before
+    public void setUp() {
+        trackingService = new TrackingService();
+    }
+
     @Test
     public void newTrackingServiceTotalIsZero() {
 
-        TrackingService trackingService = new TrackingService();
         assertEquals("Tracking Service Total should be 0", 0, trackingService.getTotal());
 
     }
@@ -17,7 +24,6 @@ public class TrackingServiceTest {
     @Test
     public void addingProteinThenTotalIncreaseByThatAmount() {
 
-        TrackingService trackingService = new TrackingService();
         trackingService.addProtein(10);
         assertEquals("Total should be increased by 10", 10, trackingService.getTotal());
 
