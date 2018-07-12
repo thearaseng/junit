@@ -44,7 +44,7 @@ public class TrackingServiceTest {
 
     @Test(expected = InvalidGoalException.class)
     public void goalIsSetToLessThanZeroExceptionIsThrown() throws InvalidGoalException {
-        trackingService.setGoal(0);
+        trackingService.setGoal(-1);
     }
 
 }
