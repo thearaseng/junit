@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TrackingServiceTest {
 
-    TrackingService trackingService;
+    private TrackingService trackingService;
 
     @Before
     public void setUp() {
