@@ -1,5 +1,6 @@
 package com.thearaseng.service;
 
+import com.thearaseng.exception.InvalidGoalException;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -12,12 +13,12 @@ public class TrackingServiceTest {
     private TrackingService trackingService;
 
     @BeforeClass
-    public void beforeClass() {
+    public static void beforeClass() {
         System.out.println("Before Class");
     }
 
     @AfterClass
-    public void afterClass() {
+    public static void afterClass() {
         System.out.println("After Class");
     }
 
@@ -39,6 +40,11 @@ public class TrackingServiceTest {
         trackingService.addProtein(10);
         assertEquals("Total should be increased by 10", 10, trackingService.getTotal());
 
+    }
+
+    @Test(expected = InvalidGoalException.class)
+    public void goalIsSetToLessThanZeroExceptionIsThrown() throws InvalidGoalException {
+        trackingService.setGoal(0);
     }
 
 }
